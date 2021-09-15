@@ -1,0 +1,32 @@
+class Node:
+  def __init__(self, data=None, next=None):
+    self.data=data
+    self.next=next
+class Linkedlist:
+  def __init__(self):
+    self.head=None
+  def insertAtBegining(self,data):
+    p=Node(data) 
+    p.next=self.head
+    self.head=p
+  def _printList(self):
+    itr=self.head
+    while itr:
+      print(itr.data,'-->')
+      itr=itr.next
+if __name__=='__main__':
+  l=Linkedlist()
+  l.head=Node(25)
+  e1=Node(78)
+  e2=Node(58)
+  e3=Node(45)
+  l.head.next=e1
+  e1.next=e2
+  e2.next=e3
+  l._printList()
+  n=int(input('enter value:'))
+  l.insertAtBegining(n)
+  l._printList()
+  n=int(input('enter value:'))
+  l.insertAtBegining(n)
+  l._printList()
